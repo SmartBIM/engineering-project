@@ -11,11 +11,7 @@ const App = () => (
   <div>
     <h1>Home</h1>
     <nav>
-      {/* remove stupid space */}
-      <Link to="/">Home</Link>{" "} 
-      
-      {/* not needed for now so :/ */}
-      {/* <Link to="product">Product</Link> */}
+      <Link to="/">Home</Link>
     </nav>
 
 
