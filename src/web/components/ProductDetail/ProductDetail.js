@@ -4,10 +4,7 @@ import { useSelector } from 'react-redux'
 const ProductDetail = (props) => {
   console.log(props)
 
-  const products = useSelector(state => state.products.find(p => p.id === props.productId))
   const product = useSelector(state => state.products.find(p => p.id === props.productId))
-
-
 
   // need to retrieve config about styling - based on brand?
 
@@ -40,7 +37,7 @@ const ProductDetail = (props) => {
         <section>
           <h4>Features</h4>
           <ul>
-            {product.features.map(feature => <li>{feature}</li>)}
+            {product.features.map((feature, idx) => <li key={idx}>{feature}</li>)}
           </ul>
         </section>
 
