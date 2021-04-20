@@ -5,19 +5,18 @@ import { Provider } from 'react-redux'
 import store from './stuff/store'
 
 import Home from './components/Home/Home'
-import ProductInfo from './components/ProductList/ProductList'
+import ProductDetail from './components/ProductDetail/ProductDetail'
 
 const App = () => (
   <div>
-    <h1>Home</h1>
+    <h1>Concora UI Test</h1>
     <nav>
       <Link to='/'>Home</Link>
     </nav>
 
-
     <Router>
       <Home path='/' />
-      <ProductInfo path='/product/:productId' />
+      <ProductDetail path='/products/:productId' />
     </Router>
   </div>
 )

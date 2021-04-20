@@ -3,7 +3,7 @@ import ProductList from '../ProductList/ProductList'
 
 import { useSelector } from 'react-redux'
 
-function Home(props) {
+function Home() {
   const p = useSelector(state => state.products)
 
   return (
