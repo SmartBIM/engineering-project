@@ -11,6 +11,7 @@ module.exports = {
   entry: path.join(__dirname, 'src', 'web', 'index.js'),
   mode: 'development',
   output: {
+    publicPath: '/',
     path: path.join(__dirname, 'public'),
     filename: 'index.bundle.js'
   },
@@ -21,6 +22,7 @@ module.exports = {
     contentBase: path.join(__dirname, 'src', 'web'),
     compress: true,
     port: 9000,
+    historyApiFallback: true
   },
   plugins: [
     htmlplugin
