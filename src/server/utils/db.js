@@ -26,8 +26,18 @@ async function getAll(collection) {
 function seed() {
   // load json file into DATABASE
   // to give some examples
+  DATABASE['products'] = {
+    id: 'test',
+    name: 'test',
+    description: 'This is a test',
+    meta: {
+      price: 5.50,
+      manufacturer: 'Someone'
+    }
+  }
 }
 
+seed()
 
 module.exports = {
   add,
