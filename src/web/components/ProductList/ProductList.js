@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from "@reach/router"
 
-// needs edit link
-function ProductListItem({item}) {
+function ProductListItem({ item }) {
   return ( 
     <li>
       <Link to={`products/${item.id}`}> {item.brand} -- {item.category}</Link>
