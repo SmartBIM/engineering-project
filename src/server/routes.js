@@ -1,7 +1,7 @@
 const routes = require('express').Router()
 
-const ProductService = require('../services/product')
-const SiteConfigService = require('../services/siteConfig')
+const ProductService = require('./services/product')
+const SiteConfigService = require('./services/siteConfig')
 
 
 // product
