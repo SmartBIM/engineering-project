@@ -1,4 +1,4 @@
-// import { ADD_PRODUCT, REMOVE_PRODUCT, LOAD_PRODUCTS } from "../actionTypes"
+// import { ADD_PRODUCT, REMOVE_PRODUCT, LOAD_PRODUCTS } from '../actionTypes'
 import axios from 'axios'
 
 async function getProducts() {
