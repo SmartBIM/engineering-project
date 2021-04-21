@@ -56,7 +56,6 @@ const ProductDetail = (props) => {
 
   const BigText = styled.h2`
     padding: 10px;
-    // flex-basis: 200px;
   `
 
   const BigTextFullRow = styled.h3`
@@ -70,7 +69,7 @@ const ProductDetail = (props) => {
       <h3>{product.id}</h3>
 
       <Wrapper>
-        <Header>Company custom text</Header>
+        <Header>{siteStyling.company}</Header>
 
         <DetailsAndPhotoContainer>
            <ProductImage></ProductImage>

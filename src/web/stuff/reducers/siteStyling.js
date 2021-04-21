@@ -9,6 +9,7 @@ async function getProductStyling() {
 const initialState = [
   {
     id: 1,
+    company: 'A Company',
     brand: 'Some Brand',
     font: 'Arial',
     headerColor: 'papayawhip',
@@ -19,6 +20,7 @@ const initialState = [
   },
   {
     id: 2,
+    company: 'Company B',
     brand: 'Other Brand',
     font: 'Helvetica',
     headerColor: 'blue',
