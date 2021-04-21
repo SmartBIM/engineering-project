@@ -42,6 +42,10 @@ const ProductDetailView = (props) => {
     max-width: 80%;
   `
 
+  const addProductOnClick = () => alert('Add Product Clicked')
+  const removeProductOnClick = () => alert('Remove Product Clicked')
+
+
   return (
     <Section>
       <H3>{product.id}</H3>
@@ -50,8 +54,8 @@ const ProductDetailView = (props) => {
         <ProductDetails product={product} siteStyling={siteStyling} />
 
         <ButtonGroup>
-          <Button key={0}>Add Product</Button>
-          <Button key={1}>Remove Product</Button>
+          <Button onClick={addProductOnClick} key={0}>Add Product</Button>
+          <Button onClick={removeProductOnClick} key={1}>Remove Product</Button>
         </ButtonGroup>
       </FlexSection>
       
