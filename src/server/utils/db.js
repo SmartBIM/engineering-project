@@ -30,8 +30,8 @@ function seed() {
         'steel block'
       ],
       resources: [
-        { material: 'weight', resource: 'steel', other: '20kg' }
-        { material: 'height', resource: '2', other: 'ft' }
+        { material: 'weight', resource: 'steel', other: '20kg' },
+        { material: 'height', resource: '2', other: 'ft' },
         { material: 'contact', resource: '123-456-7890', other: 'Contact' }
       ],
       media: [
@@ -48,8 +48,8 @@ function seed() {
         'Really, really strong'
       ],
       resources: [
-        { material: 'weight', resource: 'neutron matter', other: '99999999kg' }
-        { material: 'ability', resource: 'worthiness', other: 'Contact for info' }
+        { material: 'weight', resource: 'neutron matter', other: '99999999kg' },
+        { material: 'ability', resource: 'worthiness', other: 'Contact for info' },
         { material: 'contact', resource: '123-456-7890', other: 'Contact' }
       ],
       media: [
