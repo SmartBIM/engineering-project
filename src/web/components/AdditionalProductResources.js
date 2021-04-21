@@ -18,8 +18,12 @@ const AdditionalProductResources = (props) => {
   `
 
   const TableRow = styled.tr``
-  const TableData = styled.td``
-  const TableColumnHead = styled.th`text-align: left;`
+  const TableData = styled.td`padding-top: 10px;`
+  const TableColumnHead = styled.th`
+    text-align: left;
+    font-size: 1.5em;
+    border-bottom: 1px black solid;
+  `
 
   const rows = resources.map(r => {
     return (
