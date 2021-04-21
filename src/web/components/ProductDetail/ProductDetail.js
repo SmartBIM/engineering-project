@@ -5,12 +5,11 @@ const ProductDetail = (props) => {
   console.log(props)
 
   const product = useSelector(state => state.products.find(p => p.id === props.productId))
+  const siteStyling = useSelector(state => state.siteStyling.find(p => p.brand === product.brand))
 
   // need to retrieve config about styling - based on brand?
 
   // recreate page in pdf
-
-  const styling = {} // default
 
   return (
     <div>
