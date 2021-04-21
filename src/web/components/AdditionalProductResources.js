@@ -11,6 +11,8 @@ const AdditionalProductResources = (props) => {
     border: 1px black solid;
     padding-bottom: 20px;
     background-color: white;
+    overflow-x:auto;
+
   `
 
   // const BigTextContent = styled.div`font-size: 0.85em;font-weight: normal;`

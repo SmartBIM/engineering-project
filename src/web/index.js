@@ -3,8 +3,8 @@ import { render } from 'react-dom'
 import { Router, Link } from '@reach/router'
 import { Provider } from 'react-redux'
 import store from './stuff/store'
-import Home from './views/Home/Home'
-import ProductDetailView from './views/ProductDetail/ProductDetailView'
+import HomeView from './views/HomeView'
+import ProductDetailView from './views/ProductDetailView'
 
 const App = () => {
   return (
@@ -15,7 +15,7 @@ const App = () => {
       </nav>
 
       <Router>
-        <Home path='/' />
+        <HomeView path='/' />
         <ProductDetailView path='/products/:productId' />
       </Router>
     </div>

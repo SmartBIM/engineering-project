@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
-import ProductList from '../../components/ProductList'
+import ProductList from '../components/ProductList'
+import styled from 'styled-components'
 
 import { useDispatch, useSelector } from 'react-redux'
-import { getProducts, loadStylingByProductId } from '../../stuff/actions'
+import { getProducts, loadStylingByProductId } from '../stuff/actions'
 
 function Home() {
   const dispatch = useDispatch()
@@ -13,13 +14,16 @@ function Home() {
     dispatch(loadStylingByProductId())
   }, [dispatch])
 
+  const Wrapper = styled.div`
+    max-width: 1000px;
+  `
 
   return (
-    <div>
+    <Wrapper>
       <h3>Product List</h3>
 
       <ProductList products={p} />
-    </div>
+    </Wrapper>
   )
 }
 
