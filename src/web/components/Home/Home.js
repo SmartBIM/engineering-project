@@ -8,7 +8,7 @@ function Home() {
 
   return (
     <div>
-      <p>Test List</p>
+      <h3>Product List</h3>
 
       <ProductList products={p} />
     </div>
