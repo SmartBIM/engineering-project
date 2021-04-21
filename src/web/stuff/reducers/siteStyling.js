@@ -11,8 +11,8 @@ const initialState = [
     id: 1,
     brand: 'Some Brand',
     font: 'Arial',
-    headerColor: 'blue',
-    footerColor: 'green',
+    headerColor: 'papayawhip',
+    footerColor: 'lightgrey',
     textColor: '#424242',
     buttonColor: '#FFFFFF',
     buttonText: '#ABABAB'
