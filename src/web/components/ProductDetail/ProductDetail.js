@@ -11,7 +11,6 @@ const ProductDetail = (props) => {
     <div>
       {/* header */}
 
-      {/* product id */}
       <h3>{product.id}</h3>
 
       {/* info box */}
@@ -41,6 +40,7 @@ const ProductDetail = (props) => {
 
 
     {/* footer */}
+
     </div>
   )
 }
