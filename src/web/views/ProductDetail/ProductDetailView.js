@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
 import { loadProduct, loadStylingByProductId } from '../../stuff/actions'
 import ProductDetails from '../../components/ProductDetails'
+import AdditionalProductResources from '../../components/AdditionalProductResources'
 
 const ProductDetailView = (props) => {
   const dispatch = useDispatch()
@@ -26,7 +27,7 @@ const ProductDetailView = (props) => {
 
       {/* Button group */}
 
-      {/* <AdditionalProductDetails resources={product.resources}/> */}
+      <AdditionalProductResources resources={product.resources}/>
     </Section>
   )
 }
