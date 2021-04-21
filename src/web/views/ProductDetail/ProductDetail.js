@@ -7,13 +7,7 @@ const ProductDetail = (props) => {
   const dispatch = useDispatch()
   const defaultProduct = { media: [], features: [], productId: props.productId }
   const product = useSelector(state => state.productList.products.find(p => p.id === props.productId) || defaultProduct)
-  const siteStyling = useSelector(state => {
-    try {
-      return state.siteStyling.find(p => p.brand === product.brand) || {}
-    } catch(e) {
-      debugger
-    }
-  }) || {}
+  const siteStyling = useSelector(state => state.siteStyling.find(p => p.brand === product.brand)) || {}
 
   useEffect(() => {
     dispatch(loadProduct(props.productId))
