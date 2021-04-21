@@ -8,10 +8,7 @@ const DB = require('../utils/db')
 
 
 async function getStylingInfo(req, res, next) {
-  const config = await DB.get('configs', companyId)
-
-  // if not config, return null
-  // defaults will be picked up by css on UI
+  const config = await DB.get('siteStylings', companyId)
 
   return config
 }
@@ -22,8 +19,8 @@ async function getStylingInfo(req, res, next) {
  * to use at load rather than wait for each product
  * @returns 
  */
-async function getAllStylingInfo() {
-  return DB.getAll('configs')
+async function getAllStylingInfo(req, res) {
+  res.json(await DB.getAll('siteStylings'))
 }
 
 module.exports = {

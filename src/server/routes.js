@@ -5,13 +5,13 @@ const SiteConfigService = require('./services/siteConfig')
 
 
 // product
-routes.get('/api/product', ProductService.getAll)
-routes.get('/api/product/:id', ProductService.get)
-routes.post('/api/product/', ProductService.add)
-routes.delete('/api/product/:id', ProductService.remove)
+routes.get('/api/products', ProductService.getAll)
+routes.get('/api/products/:id', ProductService.get)
+routes.post('/api/products', ProductService.add)
+routes.delete('/api/products/:id', ProductService.remove)
 
 // Site (aka company custom config)
-routes.get('/api/site/:id', SiteConfigService.getStylingInfo)
+routes.get('/api/siteStylings', SiteConfigService.getAllStylingInfo)
 
 
 module.exports = routes

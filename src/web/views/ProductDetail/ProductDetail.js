@@ -1,10 +1,24 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
+import { loadProduct, loadStylingByProductId } from '../../stuff/actions'
 
 const ProductDetail = (props) => {
-  const product = useSelector(state => state.products.find(p => p.id === props.productId))
-  const siteStyling = useSelector(state => state.siteStyling.find(p => p.brand === product.brand))
+  const dispatch = useDispatch()
+  const defaultProduct = { media: [], features: [], productId: props.productId }
+  const product = useSelector(state => state.productList.products.find(p => p.id === props.productId) || defaultProduct)
+  const siteStyling = useSelector(state => {
+    try {
+      return state.siteStyling.find(p => p.brand === product.brand) || {}
+    } catch(e) {
+      debugger
+    }
+  }) || {}
+
+  useEffect(() => {
+    dispatch(loadProduct(props.productId))
+    dispatch(loadStylingByProductId(props.productId))
+  }, [dispatch])
 
   const Wrapper = styled.section`
     width: 80%;
@@ -27,13 +41,13 @@ const ProductDetail = (props) => {
     background-color: ${siteStyling.footerColor}
   `
 
-  // fill with product image soon
+  const image = (product.media || [])[0] || ''
   const ProductImage = styled.span`
     margin-left: 10px;
     margin-top: 40px;
     height: 200px;
     width: 200px;
-    background-image: url("${product.media[0]}");
+    background-image: url("${image}");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -62,8 +76,6 @@ const ProductDetail = (props) => {
     width: 70%;
     padding: 10px;
   `
-
-
   return (
     <section>
       <h3>{product.id}</h3>
