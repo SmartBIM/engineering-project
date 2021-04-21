@@ -15,6 +15,9 @@ const initialState = [
     features: [
       'protection from rain',
       'steel block'
+    ],
+    resources: [
+      // no idea
     ]
   },
   {
@@ -25,6 +28,9 @@ const initialState = [
     features: [
       'Made from pantented Neutron Star matter',
       'Really, really strong'
+    ],
+    resources: [
+      // no idea
     ]
   }
 ]
