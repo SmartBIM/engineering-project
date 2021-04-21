@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
+import { useSelector, useDispatch } from 'react-redux'
 import { loadProduct, loadStylingByProductId } from '../../stuff/actions'
+import ProductDetails from '../../components/ProductDetails'
 
 const ProductDetail = (props) => {
   const dispatch = useDispatch()
@@ -14,90 +15,19 @@ const ProductDetail = (props) => {
     dispatch(loadStylingByProductId(props.productId))
   }, [dispatch])
 
-  const Wrapper = styled.section`
-    width: 80%;
-    border: 2px black solid;
-  `
+  const H3 = styled.h3``
+  const Section = styled.section``
 
-  const Header = styled.section`
-    font-size: 1.5em;
-    text-align: center;
-    color: red;
-    padding: 1em;
-    background-color: ${siteStyling.headerColor}
-  `
-
-  const Footer = styled.section`
-    font-size: 2.5em;
-    text-align: center;
-    color: red;
-    padding: 1em;
-    background-color: ${siteStyling.footerColor}
-  `
-
-  const image = (product.media || [])[0] || '' // HACK - todo get rid of this
-  const ProductImage = styled.span`
-    margin-left: 10px;
-    margin-top: 40px;
-    height: 200px;
-    width: 200px;
-    background-image: url("${image}");
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-  `
-
-  const DetailsContainer = styled.section`
-    width: 70%;
-    display: flex;
-    align-items: stretch;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  `
-
-  const DetailsAndPhotoContainer = styled.section`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  `
-
-  const BigText = styled.h2`
-    padding: 10px;
-  `
-
-  const BigTextFullRow = styled.h3`
-    width: 70%;
-    padding: 10px;
-  `
   return (
-    <section>
-      <h3>{product.id}</h3>
+    <Section>
+      <H3>{product.id}</H3>
 
-      <Wrapper>
-        <Header>{siteStyling.company}</Header>
+      <ProductDetails product={product} siteStyling={siteStyling} />
 
-        <DetailsAndPhotoContainer>
-           <ProductImage></ProductImage>
+      {/* Button group */}
 
-          <DetailsContainer>
-            <BigText>Brand: {product.brand}</BigText>
-            <BigText>Category: {product.category}</BigText>
-
-            <BigTextFullRow>Description: {product.description}</BigTextFullRow>
-            
-            <BigTextFullRow>
-              Features:
-              <ul>
-                {product.features.map((feature, idx) => <li key={idx}>{feature}</li>)}
-              </ul>
-            </BigTextFullRow>
-          </DetailsContainer>
-        </DetailsAndPhotoContainer>
-
-        <Footer/>
-      </Wrapper>
-    </section>
+      {/* <AdditionalProductDetails resources={product.resources}/> */}
+    </Section>
   )
 }
 
