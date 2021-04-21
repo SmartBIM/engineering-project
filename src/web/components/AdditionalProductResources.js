@@ -6,8 +6,8 @@ const AdditionalProductResources = (props) => {
 
   const Wrapper = styled.section`
     margin-top: 20px;
-    width: 80%;
-    border: 2px black solid;
+    width: 70%;
+    border: 1px black solid;
     padding-bottom: 20px;
   `
 
@@ -18,6 +18,7 @@ const AdditionalProductResources = (props) => {
   `
 
   const TableRow = styled.tr``
+  const TableBody = styled.tbody``
   const TableData = styled.td`padding-top: 10px;`
   const TableColumnHead = styled.th`
     text-align: left;
@@ -25,9 +26,9 @@ const AdditionalProductResources = (props) => {
     border-bottom: 1px black solid;
   `
 
-  const rows = resources.map(r => {
+  const rows = resources.map((r, i) => {
     return (
-      <TableRow>
+      <TableRow key={i+1}>
         <TableData>{r.material}</TableData>
         <TableData>{r.resource}</TableData>
         <TableData>{r.other}</TableData>
@@ -38,12 +39,14 @@ const AdditionalProductResources = (props) => {
   return (
     <Wrapper>
       <Table>
-        <TableRow>
-          <TableColumnHead>Information</TableColumnHead>
-          <TableColumnHead>Resources</TableColumnHead>
-          <TableColumnHead>Other</TableColumnHead>
-        </TableRow>
-        {rows}
+        <TableBody>
+          <TableRow key={0}>
+            <TableColumnHead>Information</TableColumnHead>
+            <TableColumnHead>Resources</TableColumnHead>
+            <TableColumnHead>Other</TableColumnHead>
+          </TableRow>
+          {rows}
+        </TableBody>
       </Table>
     </Wrapper>
   )

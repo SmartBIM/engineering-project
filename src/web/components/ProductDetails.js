@@ -7,7 +7,7 @@ const ProductDetail = (props) => {
 
   const Wrapper = styled.section`
     width: 80%;
-    border: 2px black solid;
+    border: 1px black solid;
   `
 
   const Header = styled.section`

@@ -18,14 +18,43 @@ const ProductDetailView = (props) => {
 
   const H3 = styled.h3``
   const Section = styled.section``
+  
+  const Button = styled.button`
+    width: 70%;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    margin-top: 20px;
+    margin-left: 15%;
+  `
+
+  const ButtonGroup = styled.div`
+    border: 1px black solid;
+    margin-left: 10px;
+    padding-bottom: 20px;
+    height: min-content;
+  `
+
+
+  const FlexSection = styled.section`
+    display: flex;
+    row-wrap: no-wrap;
+    max-width: 80%;
+  `
 
   return (
     <Section>
       <H3>{product.id}</H3>
 
-      <ProductDetails product={product} siteStyling={siteStyling} />
+      <FlexSection>
+        <ProductDetails product={product} siteStyling={siteStyling} />
 
-      {/* Button group */}
+        <ButtonGroup>
+          <Button key={0}>Add Product</Button>
+          <Button key={1}>Remove Product</Button>
+        </ButtonGroup>
+      </FlexSection>
+      
 
       <AdditionalProductResources resources={product.resources}/>
     </Section>
