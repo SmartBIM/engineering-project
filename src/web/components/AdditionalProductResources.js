@@ -6,9 +6,11 @@ const AdditionalProductResources = (props) => {
 
   const Wrapper = styled.section`
     margin-top: 20px;
+    margin-bottom: 20px;
     width: 70%;
     border: 1px black solid;
     padding-bottom: 20px;
+    background-color: white;
   `
 
   // const BigTextContent = styled.div`font-size: 0.85em;font-weight: normal;`

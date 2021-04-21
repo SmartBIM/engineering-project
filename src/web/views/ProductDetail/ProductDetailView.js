@@ -16,13 +16,27 @@ const ProductDetailView = (props) => {
     dispatch(loadStylingByProductId(props.productId))
   }, [dispatch])
 
-  const H3 = styled.h3``
-  const Section = styled.section``
+
+  const Header = styled.section`
+    font-size: 1.5em;
+    font-family: ${siteStyling.font};
+    text-align: center;
+    color: ${siteStyling.headerTextColor};
+    padding: 1em;
+    background-color: ${siteStyling.headerColor};
+    margin-top: 30px;
+  `
+
+  const H3 = styled.h3`margin-left: 30px;`
+  const Section = styled.section`
+    background-color: ${siteStyling.headerColor};
+    padding-bottom: 30px;
+  `
   
   const Button = styled.button`
     width: 70%;
-    background-color: red;
-    color: white;
+    background-color: ${siteStyling.buttonColor};
+    color: ${siteStyling.buttonText};
     padding: 5px;
     margin-top: 20px;
     margin-left: 15%;
@@ -39,7 +53,8 @@ const ProductDetailView = (props) => {
   const FlexSection = styled.section`
     display: flex;
     row-wrap: no-wrap;
-    max-width: 80%;
+    max-width: 100%;
+    background-color: white;
   `
 
   const addProductOnClick = () => alert('Add Product Clicked')
@@ -48,6 +63,8 @@ const ProductDetailView = (props) => {
 
   return (
     <Section>
+      <Header>{siteStyling.company}</Header>
+
       <H3>{product.id}</H3>
 
       <FlexSection>
@@ -61,6 +78,7 @@ const ProductDetailView = (props) => {
       
 
       <AdditionalProductResources resources={product.resources}/>
+
     </Section>
   )
 }

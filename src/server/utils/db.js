@@ -64,22 +64,21 @@ function seed() {
       company: 'A Company',
       brand: 'Some Brand',
       font: 'Arial',
-      headerColor: 'papayawhip',
-      footerColor: 'lightgrey',
-      textColor: '#424242',
-      buttonColor: '#FFFFFF',
-      buttonText: '#ABABAB'
+      headerColor: 'aliceblue',
+      headerTextColor: 'black',
+      textColor: 'black',
+      buttonColor: 'black',
+      buttonText: 'white'
     },
     {
       id: 2,
       company: 'Company B',
       brand: 'Other Brand',
       font: 'Helvetica',
-      headerColor: 'blue',
-      footerColor: 'green',
+      headerColor: 'gainsboro',
       textColor: '#424242',
-      buttonColor: '#FFFFFF',
-      buttonText: '#ABABAB'
+      buttonColor: 'blue',
+      buttonText: 'white'
     }
   ]
 }
