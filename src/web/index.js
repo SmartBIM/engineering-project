@@ -4,7 +4,7 @@ import { Router, Link } from '@reach/router'
 import { Provider } from 'react-redux'
 import store from './stuff/store'
 import Home from './views/Home/Home'
-import ProductDetail from './views/ProductDetail/ProductDetail'
+import ProductDetailView from './views/ProductDetail/ProductDetailView'
 
 const App = () => {
   return (
@@ -16,7 +16,7 @@ const App = () => {
 
       <Router>
         <Home path='/' />
-        <ProductDetail path='/products/:productId' />
+        <ProductDetailView path='/products/:productId' />
       </Router>
     </div>
   )

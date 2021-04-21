@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { loadProduct, loadStylingByProductId } from '../../stuff/actions'
 import ProductDetails from '../../components/ProductDetails'
 
-const ProductDetail = (props) => {
+const ProductDetailView = (props) => {
   const dispatch = useDispatch()
   const defaultProduct = { media: [], features: [], productId: props.productId }
   const product = useSelector(state => state.productList.products.find(p => p.id === props.productId) || defaultProduct)
@@ -31,4 +31,4 @@ const ProductDetail = (props) => {
   )
 }
 
-export default ProductDetail
+export default ProductDetailView
