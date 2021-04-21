@@ -1,8 +1,3 @@
-// this is fake for use with this thing
-// ideally would use a mongo docker image
-// with some docker-compose
-
-// add a seed here on load
 const { v4: uuidv4 } = require('uuid')
 const DATABASE = {}
 
@@ -24,8 +19,6 @@ async function getAll(collection) {
 }
 
 function seed() {
-  // load json file into DATABASE
-  // to give some examples
   DATABASE['products'] = [
     {
       id: 'test-id-1',
@@ -37,7 +30,9 @@ function seed() {
         'steel block'
       ],
       resources: [
-        // no idea
+        { material: 'weight', resource: 'steel', other: '20kg' }
+        { material: 'height', resource: '2', other: 'ft' }
+        { material: 'contact', resource: '123-456-7890', other: 'Contact' }
       ],
       media: [
         'https://res.cloudinary.com/teepublic/image/private/s--NCVmrvgD--/t_Resized%20Artwork/c_fit,g_north_west,h_954,w_954/co_000000,e_outline:48/co_000000,e_outline:inner_fill:48/co_ffffff,e_outline:48/co_ffffff,e_outline:inner_fill:48/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_auto,h_630,q_90,w_630/v1565201622/production/designs/5541196_0.jpg'
@@ -53,7 +48,9 @@ function seed() {
         'Really, really strong'
       ],
       resources: [
-        // no idea
+        { material: 'weight', resource: 'neutron matter', other: '99999999kg' }
+        { material: 'ability', resource: 'worthiness', other: 'Contact for info' }
+        { material: 'contact', resource: '123-456-7890', other: 'Contact' }
       ],
       media: [
         'https://res.cloudinary.com/teepublic/image/private/s--NCVmrvgD--/t_Resized%20Artwork/c_fit,g_north_west,h_954,w_954/co_000000,e_outline:48/co_000000,e_outline:inner_fill:48/co_ffffff,e_outline:48/co_ffffff,e_outline:inner_fill:48/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_auto,h_630,q_90,w_630/v1565201622/production/designs/5541196_0.jpg'
