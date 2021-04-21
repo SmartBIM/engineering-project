@@ -17,11 +17,11 @@ function Home() {
   const Wrapper = styled.div`
     max-width: 1000px;
   `
+  const H3 = styled.h3``
 
   return (
     <Wrapper>
-      <h3>Product List</h3>
-
+      <H3>Product List</H3>
       <ProductList products={p} />
     </Wrapper>
   )
