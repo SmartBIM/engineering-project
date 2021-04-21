@@ -1,16 +1,8 @@
-/* 
-id
-company id
-font styld
-text, header, button colors
-*/
 const DB = require('../utils/db')
 
-
 async function getStylingInfo(req, res, next) {
-  const config = await DB.get('siteStylings', companyId)
-
-  return config
+  const config = await DB.get('siteStylings', req.params.companyId)
+  res.json(config)
 }
 
 

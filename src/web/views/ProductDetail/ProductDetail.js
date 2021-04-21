@@ -35,7 +35,7 @@ const ProductDetail = (props) => {
     background-color: ${siteStyling.footerColor}
   `
 
-  const image = (product.media || [])[0] || ''
+  const image = (product.media || [])[0] || '' // HACK - todo get rid of this
   const ProductImage = styled.span`
     margin-left: 10px;
     margin-top: 40px;
