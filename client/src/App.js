@@ -1,20 +1,34 @@
-import React, { useState, useEffect } from 'react';
-//import logo from './logo.svg';
-import './App.css';
-import axios from 'axios';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom"
+import Header from './components/Header'
+import Home from './views/Home'
+import Product from './views/Product'
 
-const App = props => {
-  const [state, setState] = useState('');
-
-  useEffect(() => {
-    axios.get('/hello')
-    .then(res => setState(res.data))
-    .catch(err => console.log(err))
-  }, []);
-
+function App() {
   return (
     <div>
-      {state}
+      <Router>
+        
+        <Header />
+
+        <div>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+
+          <Route path="/products/:id">
+            <Product />
+          </Route>
+        </Switch>
+        </div>
+
+
+      </Router>
     </div>
   );
 }
