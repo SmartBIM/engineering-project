@@ -19,7 +19,7 @@ const StyledButton = styled.button`
 const ThemeSelector = () => {
   const dispatch = useDispatch();
   const changeTheme = (theme) => {
-    console.log(theme);
+    //console.log(theme);
     dispatch(applyTheme(theme));
   }
   return (
@@ -28,6 +28,6 @@ const ThemeSelector = () => {
       <StyledButton style={{backgroundColor: "white"}} onClick={() => changeTheme(whiteTheme)}>W</StyledButton>
       <StyledButton style={{backgroundColor: "dodgerblue"}} onClick={() => changeTheme(blueTheme)}>B</StyledButton>
     </div>
-  );
-}
+  )
+};
 export default ThemeSelector;

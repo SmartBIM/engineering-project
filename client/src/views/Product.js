@@ -37,30 +37,37 @@ function Product(){
   const url = `/products/${id}`;
   const [product, setProduct] = useState(null);
   let content = null;
-  let infoContent = null;
+  let infoContentStuff = null;
+  //const [infoContent, setInfoContent] = useState();
 
 
   const fetchData = () => axios.get(url).then(res => setProduct(res.data));
   useEffect(() => fetchData(), []);
 
   function fetchInfoContent(props){
-    console.log(props);
-    console.log(product);
+    //console.log(props);
+    //console.log(product);
     switch(props) {
       case 1:
-        infoContent = product[0].productInfo;
+        //infoContentStuff = setInfoContent(product[0].productInfo);
+        //infoContentStuff = product[0].productInfo;
+        console.log(product[0].productInfo)
         break;
       case 2:
-        infoContent = product[0].resources;
+        //infoContentStuff = setInfoContent(product[0].resources);
+        console.log(product[0].resources)
         break;
       case 3:
-        infoContent = product[0].other;
+        //infoContentStuff = setInfoContent(product[0].other);
+        console.log(product[0].other)
         break;
-      default: infoContent = product[0].productInfo;
+      //default: infoContentStuff = setInfoContent(product[0].productInfo);
     }
-  }
-
+  };
   
+  if(!product) {
+    return content = <><div>An error has occurred</div></>
+  };
 
   if (product) {
     //let types = [product[0].productInfo, product[0].resources, product[0].other];
@@ -105,18 +112,19 @@ function Product(){
             <span onClick={() => fetchInfoContent(2)} style={{padding: '0.25rem 1rem', fontSize: '1.5rem'}}>Resources</span>
             <span onClick={() => fetchInfoContent(3)} style={{padding: '0.25rem 1rem', fontSize: '1.5rem'}}>Other</span>
 
-            <p>{infoContent}</p>
+            <p>{ infoContentStuff }</p>
           </ProductInfo>
+
         </StyledArticle>
       </>
     )
-  }
+  };
 
   return (
     <>
       { content }
     </>
   )
-}
+};
 
-export default Product
+export default Product;

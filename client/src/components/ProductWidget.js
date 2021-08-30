@@ -32,6 +32,6 @@ function ProductWidget() {
       </AddDelete>
     </>
   )
-}
+};
 
 export default ProductWidget;

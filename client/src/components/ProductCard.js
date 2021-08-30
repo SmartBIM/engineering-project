@@ -1,5 +1,5 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function ProductCard(props){
   return (
@@ -9,6 +9,6 @@ function ProductCard(props){
       </Link>
     </>
   )
-}
+};
 
-export default ProductCard
+export default ProductCard;

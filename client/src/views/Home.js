@@ -36,11 +36,11 @@ function Home(){
   const [products, setProducts] = useState(null);
   let content = null;
 
-  const fetchData = () => axios.get(url).then(res => setProducts(res.data))
-  useEffect(() => fetchData(), [])
-  //let products = useAxiosGet(url)
+  const fetchData = () => axios.get(url).then(res => setProducts(res.data));
+  useEffect(() => fetchData(), []);
+  //let products = useAxiosGet(url);
 
-  //if(products.error){content = <li>There was an error</li>}
+  //if(products.error){content = <li>There was an error</li>};
 
   if(products){
     content = products.map((product, key) => 
@@ -62,6 +62,6 @@ function Home(){
       </section>
     </Main>
   )
-}
+};
 
-export default Home
+export default Home;

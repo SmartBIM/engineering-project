@@ -16,10 +16,10 @@ router.get('/products/:id', (req, res) => {
   if (found) {
     res.json(
       products.filter((product) => product.id === Number(req.params.id))
-    );
+    )
   } else {
-    res.sendStatus(400);
-  };
+    res.sendStatus(400)
+  }
 });
 
 //get all site configs
