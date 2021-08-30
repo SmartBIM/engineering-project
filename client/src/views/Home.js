@@ -1,60 +1,66 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import ProductCard from '../components/ProductCard'
-import { useAxiosGet } from '../hooks/HttpRequests'
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import axios from 'axios';
+import ProductCard from '../components/ProductCard';
+//import { useAxiosGet } from '../hooks/HttpRequests';
+
+const Main = styled.main`
+  padding: 1rem;
+  h2 {
+    margin: 1rem auto;
+    text-align: center;
+  }
+  ul.item-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1rem;
+    padding-inline-start: 0;
+  }
+  li.item {
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 4px;
+    border: 0.5rem solid white;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+    list-style-type: none;
+    padding: 0 0.5rem;
+    text-align: center
+  }
+  a {
+    color: #333;
+  }
+`;
 
 function Home(){
 
-    //const url = `/products`
-    //let products = useAxiosGet(url)
-//
-    //let content = null
-//
-    //if(products.error){
-    //    content = <div>
-    //        <div>
-    //            There was an error please refresh or try again later.
-    //        </div>
-    //    </div>
-    //}
-//
-//
-    //if(products.data){
-    //    content = 
-    //    products.data.map((product) => 
-    //        <div key={product.id}>
-    //            <ProductCard 
-    //                product={product}
-    //            />
-    //        </div>
-    //    )
-    //}
-    const url = `/products`;
-    const [products, setProducts] = useState(null)
-    let content = null
+  const url = `/products`;
+  const [products, setProducts] = useState(null);
+  let content = null;
 
   const fetchData = () => axios.get(url).then(res => setProducts(res.data))
   useEffect(() => fetchData(), [])
+  //let products = useAxiosGet(url)
 
-  //if(products.error){content = <p>There was an error</p>}
+  //if(products.error){content = <li>There was an error</li>}
 
   if(products){
-    content = products.map((product) => 
-      <div key={product.id}>
-        <ProductCard product={product} />
-      </div>
+    content = products.map((product, key) => 
+      <li className="item" key={key}>
+        <h3><ProductCard product={product} /></h3>
+      </li>
     )
   }
 
   return (
-    <div>
-      <h1>
-        Products
-      </h1>
-      <div>
-        { content } 
-      </div>
-    </div>
+    <Main>
+      <section>
+        <h2>
+          Products
+        </h2>
+        <ul className="item-list">
+          { content }
+        </ul> 
+      </section>
+    </Main>
   )
 }
 

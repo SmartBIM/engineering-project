@@ -3,33 +3,48 @@ import {
   BrowserRouter as Router,
   Switch,
   Route
-} from "react-router-dom"
-import Header from './components/Header'
-import Home from './views/Home'
-import Product from './views/Product'
+} from "react-router-dom";
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { createStore } from 'redux';
+import Header from './components/Header';
+import Home from './views/Home';
+import Product from './views/Product';
+import { redTheme, whiteTheme, blueTheme } from './themes';
+
+import { useSelector } from 'react-redux';
+import { themeReducer } from './redux/themeReducer';
+
+const store = createStore(themeReducer)
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: ${(props) => props.theme.backgroundColor};
+  }
+`;
 
 function App() {
+  const theme = useSelector((state) => state.theme);
+
   return (
-    <div>
-      <Router>
-        
-        <Header />
+    <>
+      <ThemeProvider theme={theme}>
+        <Router>
+          <GlobalStyle />
+          <Header />
 
-        <div>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
 
-          <Route path="/products/:id">
-            <Product />
-          </Route>
-        </Switch>
-        </div>
+            <Route path="/products/:id">
+              <Product />
+            </Route>
+          </Switch>
 
-
-      </Router>
-    </div>
+        </Router>
+      </ThemeProvider>
+    </>
   );
 }
 

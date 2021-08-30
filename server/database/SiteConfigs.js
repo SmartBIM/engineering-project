@@ -1,19 +1,19 @@
-const siteconfigs = [
+const SiteConfigs = [
   {
     id: 1,
-    store: 'Red Store',
+    storeName: 'Red Company Store',
     primaryColor: 'red'
   },
   {
     id: 2,
-    store: 'White Store',
-    primaryColor: 'white'
+    storeName: 'White Company Store',
+    primaryColor: '#CCCCCC'
   },
   {
     id: 3,
-    store: 'Blue Store',
+    storeName: 'Blue Company Store',
     primaryColor: 'blue'
   }
 ];
 
-module.exports = siteconfigs;
+module.exports = SiteConfigs;
