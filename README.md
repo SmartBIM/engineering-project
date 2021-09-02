@@ -8,7 +8,7 @@ Please reference the UI mockup here
 
 (https://github.com/SmartBIM/engineering-project/blob/main/images/UX-Markup.pdf)
 
-# Front-end: 
+# Frontend: 
 ## Technical Requirements: 
 - Must use React. Bonus points for implementing Redux.
 - Must use the styled components library. https://styled-components.com/
@@ -21,7 +21,7 @@ Please reference the UI mockup here
 	- Button, Header, and Text color should come from a configuration route. Font style should also come from this method along with the a logo and company name. 
 
 ## Routing: 
-The page should navigate to a page when a user enters the product id in the url, ie 
+The page should navigate when a user enters the product id in the url, i.e. 
 ```
 		localhost:8080/products/t-12345-6
 ```
@@ -39,7 +39,7 @@ The page should navigate to a page when a user enters the product id in the url,
 
 
 
-# Bonus points: 
+# Bonus Points: 
 - A page and route that get all products, and displays them in a list of links that go to the details page. 
 - Any creative styling enhancements.  
 
