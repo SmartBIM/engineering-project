@@ -2,7 +2,7 @@
 
 ## Requirements: 
 
-To start, create a feature branch: /feature/{your name} 
+To start, clone the project and push to your personal github profile. 
 
 Please reference the UI mockup here 
 
@@ -46,7 +46,7 @@ The page should navigate when a user enters the product id in the url, i.e.
 - Any creative styling enhancements.
 - Adding Redux   
 
-When complete, send a link to the github repo. 
+When complete, send a link to the personal github repo. 
 
 Any questions, please reach out.
 ryan.chesnut@concora.com
